@@ -59,7 +59,21 @@ void drawPelangi() {
 void drawPohon() {
     glBegin(GL_POLYGON);
         glColor3fv(green);
-        circle(0, 0, 1, -45, 225);
+        circle(-0.6, -0.2, 0.1, 0, 360);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glColor3fv(green);
+        circle(-0.7, -0.2, 0.1, 0, 360);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glColor3fv(green);
+        circle(-0.65, -0.1, 0.1, 0, 360);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glColor3fv(green);
+        glVertex2f(-0.65, -0.2);
+        glVertex2f(-0.6, -0.5);
+        glVertex2f(-0.7, -0.5);
     glEnd();
 }
 
