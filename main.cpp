@@ -50,6 +50,14 @@ void circle(float x, float y, float r, int anglestart, int anglestop) {
     }
 }
 
+void circle_gradation(float x, float y, float r, int anglestart, int anglestop) {
+    for (int i = anglestart;i < anglestop ;i++) {
+        float degInRad = i*3.14159/180;
+        glColor3f(0, cos(degInRad) , 0);
+        glVertex2f(cos(degInRad)*r + x, sin(degInRad)*r + y);
+    }
+}
+
 void InverseCircle(float x, float y, float r, int anglestart, int anglestop) {
     for (int i = anglestart-1;i >= anglestop ;i--) {
         float degInRad = i*3.14159/180;
@@ -157,6 +165,22 @@ void drawTess(int x, int xx) {
 
 }
 
+void drawLangit() {
+    glBegin(GL_POLYGON);
+        glColor3f(1, 1, 0);
+        glVertex2f(-1,1);
+
+        glColor3f(0, 0, 1);
+        glVertex2f(-1, -1);
+
+        glColor3f(0, 0.5, 1);
+        glVertex2f(1, -1);
+
+        glColor3f(0, 0.5, 1);
+        glVertex2f(1, 1);
+    glEnd();
+}
+
 void drawMatahari() {
 
 }
@@ -204,34 +228,41 @@ void drawPelangi() {
     drawTess(420, 280);
 }
 
-void drawPohon() {
+void drawPohon(GLfloat x, GLfloat y) {
     glBegin(GL_POLYGON);
-        glColor3fv(color_green);
-        circle(-0.6, -0.2, 0.1, 0, 360);
+        glColor3f(0.65, 0.38, 0.01);
+        glVertex2f(x, y);
+
+        glColor3f(0.33, 0.19, 0);
+        glVertex2f(x + 0.05, y - 0.3);
+
+        glColor3f(0.33, 0.19, 0);
+        glVertex2f(x - 0.05, y - 0.3);
     glEnd();
     glBegin(GL_POLYGON);
         glColor3fv(color_green);
-        circle(-0.7, -0.2, 0.1, 0, 360);
+        circle_gradation(x + 0.05, y, 0.1, 0, 360);
     glEnd();
     glBegin(GL_POLYGON);
         glColor3fv(color_green);
-        circle(-0.65, -0.1, 0.1, 0, 360);
+        circle_gradation(x - 0.05, y, 0.1, 0, 360);
     glEnd();
     glBegin(GL_POLYGON);
         glColor3fv(color_green);
-        glVertex2f(-0.65, -0.2);
-        glVertex2f(-0.6, -0.5);
-        glVertex2f(-0.7, -0.5);
+        circle_gradation(x, y + 0.1, 0.1, 0, 360);
     glEnd();
 }
 
 static void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
+    drawLangit();
     drawPelangi();
     drawGunung();
     drawMatahari();
-    drawPohon();
+    drawPohon(-0.65, -0.2);
+    drawPohon(-0.5, -0.2);
+    drawPohon(-0.575, -0.3);
     glutSwapBuffers();
 }
 
