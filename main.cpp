@@ -66,6 +66,15 @@ void clearQuads() {
     }
 }
 
+void addPoint(float x, float y, float z, float r, float g, float b, int index) {
+    quads[index][0] = x;
+    quads[index][1] = y;
+    quads[index][2] = z;
+    quads[index][3] = r;
+    quads[index][4] = g;
+    quads[index][5] = b;
+}
+
 void QuadCircle(float x, float y, float r, int anglestart, int anglestop, int idx) {
     for (int i = anglestart;i < anglestop ;i++) {
         float degInRad = i*3.14159/180;
@@ -157,10 +166,32 @@ void drawGunung() {
     red = 0;
     green = 0;
     blue = 1;
-    QuadCircle(0, -0.5, 0.1, 0, 360, 0);
+    //QuadCircle(0, -0.5, 0.1, 0, 360, 0);
+    addPoint(-1,-1,0, 1, 0, 0, 0);
+    addPoint(-1,-0.4,0, 1, 0, 0, 1);
+    QuadInverseCircle(-0.9,-0.4, 0.2, 180, 90, 2);
+
+    QuadCircle(-0.9,0,0.2,270,330,92);
+
+    addPoint(-0.6,0.2,0,0,0,1,152);
+
+    QuadInverseCircle(-0.3,0.1,0.3,160,20,153);
+
+    addPoint(0.3, -0.3, 0, 0, 0, 1, 293);
+
+    QuadInverseCircle(0.3, -0.4, 0.1, 90, 30, 294);
+
+    addPoint(0.8, -1, 0, 0, 0, 1, 354);
+
+    addPoint(0.5, -1, 0, 1, 0, 0, 355);
+
+    //addPoint(-1,-1, 0, 1, 0, 0, 355);
+
+    //addPoint(0.5,0.5,0, 1, 0, 0, 2);
 
 
-    drawTess(0, 360);
+
+    drawTess(0, 356);
     //drawTess(280);
     //drawTess(420);
 }
@@ -205,7 +236,7 @@ static void display(void)
 }
 
 void reshape(int w, int h) {
-    glViewport(150, 0, w/(1.5), h);
+    glViewport(0, 0, w/(1.5), h);
 }
 
 void initOpenGL() {
