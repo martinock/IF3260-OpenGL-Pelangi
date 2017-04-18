@@ -186,27 +186,27 @@ void drawMatahari() {
 
 void drawGunung() {
     clearQuads();
-    red = 0;
-    green = 0;
-    blue = 1;
+    red = 0.545;
+    green = 0.2705;
+    blue = 0.074;
     //QuadCircle(0, -0.5, 0.1, 0, 360, 0);
-    addPoint(-1,-1,0, 1, 0, 0, 0);
-    addPoint(-1,-0.4,0, 1, 0, 0, 1);
+    addPoint(-1,-1,0, 0.4, 0.556, 0.15, 0);
+    addPoint(-1,-0.4,0, 0.4, 0.556, 0.15, 1);
     QuadInverseCircle(-0.9,-0.4, 0.2, 180, 90, 2);
 
     QuadCircle(-0.9,0,0.2,270,330,92);
 
-    addPoint(-0.6,0.2,0,0,0,1,152);
+    addPoint(-0.6,0.2,0,red,green,blue,152);
 
     QuadInverseCircle(-0.3,0.1,0.3,160,20,153);
 
-    addPoint(0.3, -0.3, 0, 0, 0, 1, 293);
+    addPoint(0.3, -0.3, 0, red, green, blue, 293);
 
     QuadInverseCircle(0.3, -0.4, 0.1, 90, 30, 294);
 
-    addPoint(0.8, -1, 0, 0, 0, 1, 354);
+    addPoint(0.8, -1, 0, red, green, blue, 354);
 
-    addPoint(0.5, -1, 0, 1, 0, 0, 355);
+    addPoint(0.5, -1, 0, 0.4, 0.556, 0.15, 355);
 
     //addPoint(-1,-1, 0, 1, 0, 0, 355);
 
@@ -217,6 +217,45 @@ void drawGunung() {
     drawTess(0, 356);
     //drawTess(280);
     //drawTess(420);
+}
+
+void drawGunung2() {
+    clearQuads();
+    red = 0.2;
+    green = 0.2;
+    blue = 0.2;
+
+    float red2 = 0.6;
+    float blue2 = 0.6;
+    float green2 = 0.6;
+
+    addPoint(0,-1,0, red, green, blue, 0);
+    addPoint(0.5,0.2,0, red2, green2, blue2, 1);
+    addPoint(0.9,0.2,0, 0.45, 0.45, 0.45, 2);
+    addPoint(1.5,-1,0, 0, 0, 0, 3);
+
+    drawTess(0, 4);
+
+    clearQuads();
+    red = 1;
+    green = 1;
+    blue = 1;
+
+    QuadCircle(0.7,0.1,0.23, 10, 170, 0);
+    red = 0.5;
+    green = 0.5;
+    blue = 1;
+    addPoint(0.41,0,0, red, green, blue, 160);
+    addPoint(0.55,0.099,0, red, green, blue, 161);
+    addPoint(0.6,-0.06,0, red, green, blue, 162);
+    addPoint(0.69,0.099,0, red, green, blue, 163);
+    addPoint(0.72,-0.15,0, red, green, blue, 164);
+    addPoint(0.74,0.099,0, red, green, blue, 165);
+    addPoint(0.79,-0.05,0, red, green, blue, 166);
+    addPoint(0.88,0.099,0, red, green, blue, 167);
+    addPoint(1.046,-0.1,0, red, green, blue, 168);
+
+    drawTess(0,169);
 }
 
 void drawPelangi() {
@@ -318,8 +357,9 @@ static void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
     drawLangit();
-    drawGunung();
     drawPelangi();
+    drawGunung2();
+    drawGunung();
     drawMatahari();
     drawHutan();
     glutSwapBuffers();
