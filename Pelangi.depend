@@ -310,7 +310,7 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1492516461 source:d:\kuliah\semester 6\grafika\tugas\if3260-opengl-pelangi\main.cpp
+1492529091 source:d:\kuliah\semester 6\grafika\tugas\if3260-opengl-pelangi\main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdio.h>
@@ -320,5 +320,5 @@
 	<iomanip>
 	"callback.h"
 
-1492505827 d:\kuliah\semester 6\grafika\tugas\if3260-opengl-pelangi\callback.h
+1492529023 d:\kuliah\semester 6\grafika\tugas\if3260-opengl-pelangi\callback.h
 

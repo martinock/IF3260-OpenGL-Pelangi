@@ -53,7 +53,7 @@ void circle(float x, float y, float r, int anglestart, int anglestop) {
 void circle_gradation(float x, float y, float r, int anglestart, int anglestop) {
     for (int i = anglestart;i < anglestop ;i++) {
         float degInRad = i*3.14159/180;
-        glColor3f(0, cos(degInRad) , 0);
+        glColor3f(0, sin(degInRad) , 0);
         glVertex2f(cos(degInRad)*r + x, sin(degInRad)*r + y);
     }
 }
@@ -169,13 +169,13 @@ void drawLangit() {
         glColor3f(1, 1, 0);
         glVertex2f(-1,1);
 
-        glColor3f(0, 0, 1);
+        glColor3f(0, 0.9, 1);
         glVertex2f(-1, -1);
 
         glColor3f(0, 0, 1);
         glVertex2f(1, -1);
 
-        glColor3f(0, 0, 1);
+        glColor3f(0, 0.9, 1);
         glVertex2f(1, 1);
     glEnd();
 }
@@ -225,9 +225,9 @@ void drawGunung() {
 
     QuadInverseCircle(0.3, -0.4, 0.1, 90, 30, 294);
 
-    addPoint(0.8, -1, 0, red, green, blue, 354);
+    addPoint(0.8, -1, 0, 0, 0, 0, 354);
 
-    addPoint(0.5, -1, 0, 0.4, 0.556, 0.15, 355);
+    addPoint(0.5, -1, 0, 0, 0, 0, 355);
 
     //addPoint(-1,-1, 0, 1, 0, 0, 355);
 
@@ -400,7 +400,7 @@ void initOpenGL() {
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
-    glutInitWindowSize(900,600);
+    glutInitWindowSize(700,600);
     glutInitWindowPosition(200,50);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutCreateWindow("Pelangi");
