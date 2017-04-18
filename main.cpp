@@ -252,6 +252,20 @@ void drawPohon(GLfloat x, GLfloat y) {
     glEnd();
 }
 
+void drawHutan() {
+    drawPohon(-0.65, -0.4);
+    drawPohon(-0.5, -0.4);
+    drawPohon(-0.575, -0.5);
+    drawPohon(-0.75, -0.45);
+    drawPohon(-0.85, -0.5);
+    drawPohon(-0.8, -0.6);
+    drawPohon(-0.5, -0.65);
+    drawPohon(-0.4, -0.65);
+    drawPohon(-0.6, -0.7);
+    drawPohon(-0.7, -0.7);
+    drawPohon(-0.85, -0.7);
+}
+
 static void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -259,15 +273,7 @@ static void display(void)
     drawPelangi();
     drawGunung();
     drawMatahari();
-    drawPohon(-0.65, -0.2);
-    drawPohon(-0.5, -0.2);
-    drawPohon(-0.575, -0.3);
-    drawPohon(-0.75, -0.25);
-    drawPohon(-0.85, -0.3);
-    drawPohon(-0.8, -0.4);
-    drawPohon(-0.5, -0.45);
-    drawPohon(-0.4, -0.45);
-    drawPohon(-0.6, -0.6);
+    drawHutan();
     glutSwapBuffers();
 }
 
