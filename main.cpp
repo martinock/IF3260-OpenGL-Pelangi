@@ -118,7 +118,6 @@ void drawRainbow() {
     QuadInverseCircle(0, -0.5, 0.65, 160, 20, 420);
     red = 1;
     QuadCircle(0, -0.5, 0.6, 20, 160, 560);
-
 }
 
 void drawTess(int x, int xx) {
@@ -232,6 +231,12 @@ static void display(void)
     drawPohon(-0.65, -0.2);
     drawPohon(-0.5, -0.2);
     drawPohon(-0.575, -0.3);
+    drawPohon(-0.75, -0.25);
+    drawPohon(-0.85, -0.3);
+    drawPohon(-0.8, -0.4);
+    drawPohon(-0.5, -0.45);
+    drawPohon(-0.4, -0.45);
+    drawPohon(-0.6, -0.6);
     glutSwapBuffers();
 }
 
@@ -264,3 +269,6 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+
+
