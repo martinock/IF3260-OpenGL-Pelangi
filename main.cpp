@@ -180,8 +180,29 @@ void drawLangit() {
     glEnd();
 }
 
-void drawMatahari() {
-
+void drawMatahari(float x, float y) {
+   // for (float i = 0.2; i > 0; i-=0.05){
+        glBegin(GL_POLYGON);
+        glColor3f(1,1,0);
+        circle(x, y, 0.2, 0, 360);
+        glEnd();
+        glBegin(GL_POLYGON);
+        glColor3f(0.9,0.9,0);
+        circle(x, y, 0.19, 0, 360);
+        glEnd();
+        glBegin(GL_POLYGON);
+        glColor3f(0.80,0.80,0);
+        circle(x, y, 0.18, 0, 360);
+        glEnd();
+        glBegin(GL_POLYGON);
+        glColor3f(0.85,0.85,0);
+        circle(x, y, 0.17, 0, 360);
+        glEnd();
+        glBegin(GL_POLYGON);
+        glColor3f(0.9,0.9,0);
+        circle(x, y, 0.16, 0, 360);
+        glEnd();
+    //}
 }
 
 void drawGunung() {
@@ -360,7 +381,7 @@ static void display(void)
     drawPelangi();
     drawGunung2();
     drawGunung();
-    drawMatahari();
+    drawMatahari(-0.8,0.8);
     drawHutan();
     glutSwapBuffers();
 }
