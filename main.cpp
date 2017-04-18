@@ -172,10 +172,10 @@ void drawLangit() {
         glColor3f(0, 0, 1);
         glVertex2f(-1, -1);
 
-        glColor3f(0, 0.5, 1);
+        glColor3f(0, 0, 1);
         glVertex2f(1, -1);
 
-        glColor3f(0, 0.5, 1);
+        glColor3f(0, 0, 1);
         glVertex2f(1, 1);
     glEnd();
 }
@@ -252,33 +252,81 @@ void drawPohon(GLfloat x, GLfloat y) {
     glEnd();
 }
 
+void drawCemara(GLfloat x, GLfloat y) {
+    glBegin(GL_POLYGON);
+        glColor3f(0.65, 0.38, 0.01);
+        glVertex2f(x, y);
+
+        glColor3f(0.33, 0.19, 0);
+        glVertex2f(x + 0.05, y - 0.3);
+
+        glColor3f(0.33, 0.19, 0);
+        glVertex2f(x - 0.05, y - 0.3);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glColor3fv(color_green);
+        glVertex2f(x, y+0.1);
+        glColor3f(0.0, 0.3, 0.0);
+        glVertex2f(x - 0.2, y-0.1);
+        glColor3f(0.0, 0.3, 0.0);
+        glVertex2f(x + 0.2, y-0.1);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glColor3fv(color_green);
+        glVertex2f(x, y+0.15);
+        glColor3f(0.0, 0.3, 0.0);
+        glVertex2f(x - 0.15, y);
+        glColor3f(0.0, 0.3, 0.0);
+        glVertex2f(x + 0.15, y);
+    glEnd();
+    glBegin(GL_POLYGON);
+        glColor3fv(color_green);
+        glVertex2f(x, y+0.2);
+        glColor3f(0.0, 0.3, 0.0);
+        glVertex2f(x - 0.1, y+0.1);
+        glColor3f(0.0, 0.3, 0.0);
+        glVertex2f(x + 0.1, y+0.1);
+    glEnd();
+}
+
 void drawHutan() {
     drawPohon(-0.65, -0.4);
     drawPohon(-0.5, -0.4);
     drawPohon(-0.575, -0.5);
     drawPohon(-0.75, -0.45);
     drawPohon(-0.85, -0.5);
-    drawPohon(-0.8, -0.6);
+    drawPohon(-0.2, -0.4);
+    drawPohon(-0.3, -0.5);
+    drawPohon(-0.2, -0.55);
+    drawPohon(-0.15, -0.65);
     drawPohon(-0.5, -0.65);
+    drawPohon(-0.3, -0.7);
+    drawPohon(-0.8, -0.6);
     drawPohon(-0.4, -0.65);
-    drawPohon(-0.6, -0.7);
+    drawPohon(-0.5, -0.7);
     drawPohon(-0.7, -0.7);
+    drawPohon(-0.6, -0.7);
     drawPohon(-0.85, -0.7);
+    drawCemara(0.1, -0.55);
+    drawCemara(0, -0.5);
+    drawCemara(0.1, -0.65);
+    drawCemara(0, -0.68);
+    drawCemara(0.15, -0.7);
 }
 
 static void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
     drawLangit();
-    drawPelangi();
     drawGunung();
+    drawPelangi();
     drawMatahari();
     drawHutan();
     glutSwapBuffers();
 }
 
 void reshape(int w, int h) {
-    glViewport(0, 0, w/(1.5), h);
+    glViewport(0, 0, w, h);
 }
 
 void initOpenGL() {
